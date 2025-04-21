@@ -1,0 +1,7 @@
+res://resoures/配置资源与数据模板（文件详解）.txt
+
+cell_data.gd		个体配置
+cell_data.tres		个体配置文件
+grid_config.gd		网格配置
+grid_config.tres	网格配置文件
+cell_template.tres	单元模板

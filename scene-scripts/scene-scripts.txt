@@ -1,0 +1,5 @@
+res://scene-scripts/场景脚本（文件详解）.txt
+
+grid_cell.gd	地图网格单元——创建一个带有碰撞检测和可配置纹理的网格区域
+grid_manager.gd	网格数据管理——
+main_scene.gd	主场景控制器——负责网格系统初始化与全局协调

@@ -1,0 +1,20 @@
+# Godot-specific
+.import/
+.export/
+*.import
+*.godot/tmp/
+*.translation
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Editor-specific
+*.swp
+*.bak
+*.tmp
+
+# Godot build artifacts
+*.pck
+*.exe 
+*.zip                        

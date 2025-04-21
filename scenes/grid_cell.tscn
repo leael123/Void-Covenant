@@ -1,0 +1,32 @@
+[gd_scene load_steps=7 format=3 uid="uid://bwg18nvv3smwp"]
+
+[ext_resource type="Script" uid="uid://4d7xpdf8x1tj" path="res://scene-scripts/grid_cell.gd" id="1_152gs"]
+[ext_resource type="Script" uid="uid://dwrk5n0nom36u" path="res://resoures/grid_config.gd" id="2_utojm"]
+[ext_resource type="Script" uid="uid://bh5onmm04t8gl" path="res://resoures/cell_data.gd" id="3_cnadp"]
+
+[sub_resource type="Resource" id="Resource_hmtff"]
+script = ExtResource("2_utojm")
+grid_size = Vector2i(100, 100)
+cell_size = Vector2(16, 16)
+scale_mode = 0
+metadata/_custom_type_script = "uid://dwrk5n0nom36u"
+
+[sub_resource type="Resource" id="Resource_8pdpl"]
+script = ExtResource("3_cnadp")
+texture_path = ""
+coordinate = Vector2i(0, 0)
+is_visible = true
+metadata/_custom_type_script = "uid://bh5onmm04t8gl"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yglvi"]
+size = Vector2(256, 256)
+
+[node name="GridCell" type="Area2D"]
+script = ExtResource("1_152gs")
+config = SubResource("Resource_hmtff")
+data = SubResource("Resource_8pdpl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_yglvi")

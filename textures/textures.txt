@@ -1,0 +1,4 @@
+res://textures/素材.txt
+
+textures	贴图
+sounds		音乐

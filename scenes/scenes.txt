@@ -1,0 +1,5 @@
+res://scenes/场景（文件详解）.txt
+
+grid_cell.tscn		用于创建一个带有碰撞检测和可配置纹理的网格区域
+grid_manager.tscn	网格数据管理
+main_scene.tscn		用于创建基于配置参数的网格布局系统
