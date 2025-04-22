@@ -2,13 +2,12 @@
 extends Node2D
 class_name GridManager
 
-# ------ 新增信号定义 ------
 signal cell_loaded(cell: GridCell)  # 单元格加载完成时触发
 signal cell_unloaded(cell: GridCell)  # 单元格卸载时触发
 
 @onready var grid_initializer = preload("res://resoures/cell_type/floor.gd").new()
 
-# 原有属性
+@export var tilemap: TileMap
 @export var config: GridConfig
 @export var cell_scene: PackedScene
 var _active_cells := {}
@@ -37,16 +36,6 @@ func add_cell(data: Dictionary):
 	# 示例：输出数据以验证添加逻辑
 	print("添加格子：", data)
 
-	# TODO: 你可以在这里创建 Tile 或 Sprite 实例并加入场景
-	# 比如用 tilemap.set_cell(...) 或者实例化格子节点
-
-	# 示例占位代码（可替换）：
-	# var tile = Sprite2D.new()
-	# tile.texture = load(data["texture"])
-	# tile.position = data["coord"] * TILE_SIZE
-	# add_child(tile)
-
-
 # 注册一种新的格子类型（只需写一次）
 # name：类型名称，如 "grass"
 # info：包含贴图路径、是否可通行等
@@ -54,15 +43,17 @@ func define_cell_type(type_name: String, info: Dictionary) -> void:
 	cell_types[type_name] = info
 
 # 示例：在 GridManager 的单元格加载方法中
-func load_cell(coord: Vector2i) -> void:
-	var cell = _cell_pool.pop_back() if _cell_pool else cell_scene.instantiate()
-	cell.data = CellData.new()
-	cell.data.coordinate = coord
-	add_child(cell)
-	_active_cells[coord] = cell
-	
-	# 触发信号
-	emit_signal("cell_loaded", cell)  # <-- 新增
+func load_cell(coord: Vector2i, cell_type: String) -> void:
+	if not cell_types.has(cell_type):
+		push_error("未知的格子类型: %s" % cell_type)
+		return
+
+	var texture = _texture_cache.get(cell_type, null)
+	if not texture:
+		texture = ResourceLoader.load(cell_types[cell_type].texture)
+		_texture_cache[cell_type] = texture
+
+	tilemap.set_cell(coord.x, coord.y, texture)
 
 # ---- 新增纹理缓存系统 ----
 var _texture_cache := {}              # 纹理资源缓存 {路径: Texture2D}

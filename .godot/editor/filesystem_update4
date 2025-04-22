@@ -1,0 +1,4 @@
+res://scenes/main_scene.tscn
+res://scene-scripts/grid_cell.gd
+res://scene-scripts/grid_manager.gd
+res://resoures/cell_type/floor.gd

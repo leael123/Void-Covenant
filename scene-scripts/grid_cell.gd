@@ -81,15 +81,20 @@ func _adjust_texture_scale() -> void:
 	# 自动居中
 	_sprite.position = (config.cell_size - texture_size * _sprite.scale) / 2
 
+# 添加资源队列
+var _resource_queue := []
 func _start_async_load(path: String) -> void:
-	"""启动异步加载流程"""
-	var loader = ResourceLoader.load_threaded_request(path)
-	if loader == OK:
-		data.texture_path = path
-		_monitor_loading_status(path)
-	else:
-		push_error("异步加载启动失败: %s" % path)
+	if not FileAccess.file_exists(path):
+		push_error("纹理文件不存在: %s" % path)
+		return
 
+	var loader = ResourceLoader.load_threaded_request(path)
+	if loader != OK:
+		push_error("启动异步加载失败: %s" % path)
+		return	
+	# 添加到加载队列
+	_resource_queue.append(path)
+	
 func _monitor_loading_status(path: String) -> void:
 	"""加载状态轮询（带超时机制）"""
 	var timeout = 5.0  # 最大等待时间（秒）
