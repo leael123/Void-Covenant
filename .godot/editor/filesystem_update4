@@ -1,6 +1,9 @@
 res://scenes/main_scene.tscn
-res://resoures/cell_type/floor.gd
-res://scene-scripts/grid_manager.gd
+res://resoures/cell_type/cell_type.txt
+res://resoures/resoures.txt
+res://scene-scripts/scene-scripts.txt
+res://scenes/scenes.txt
+res://textures/textures.txt
 res://resoures/cell_type/building.gd
-res://scene-scripts/building_manager.gd
-res://resoures/grid_config.gd
+res://resoures/cell_type/floor.gd
+res://Void-Covenant.txt

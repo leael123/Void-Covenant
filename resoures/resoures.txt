@@ -1,4 +1,4 @@
-res://resoures/配置资源与数据模板（文件详解）.txt
+res://resoures/resoures.txt
 
 cell_data.gd		个体配置
 cell_data.tres		个体配置文件

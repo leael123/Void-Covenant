@@ -1,4 +1,4 @@
-res://scene-scripts/场景脚本（文件详解）.txt
+res://scene-scripts/scene-scripts.txt
 
 grid_cell.gd	地图网格单元——创建一个带有碰撞检测和可配置纹理的网格区域
 grid_manager.gd	网格数据管理——

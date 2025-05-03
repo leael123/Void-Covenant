@@ -1,0 +1,4 @@
+res://resoures/cell_type/cell_type.txt
+
+building.gd		自定义建筑单元
+floor.gd		自定义地板单元

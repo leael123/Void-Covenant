@@ -1,11 +1,17 @@
 #res://resoures/cell_type.gd
 extends Node2D
 
+## --- 定义格子（地面_例子） ---
+#	grid_manager.define_cell_type("平原地面_1", {				名称
+#		"texture": "res://textures/floor/floor1.png",		贴图路径
+#		"height": 0											高度
+#	})
+
 func setup_grid(grid_manager):
-	# --- 定义格子（地面） ---
-	#名称
-	#贴图路径
-	#可否通行		true/false
+
+	
+	
+	
 	grid_manager.define_cell_type("平原地面_1", {
 		"texture": "res://textures/floor/floor1.png",
 		"height": 0

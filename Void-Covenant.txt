@@ -1,4 +1,4 @@
-res://导航（文件详解）.txt
+res://Void-Covenant.txt
 
 resoures	配置资源与数据模板
 scenes		场景
