@@ -12,7 +12,7 @@ enum ScaleMode {
 }
 
 # 配置参数
-@export var grid_size := Vector2i(100, 100)  # 网格行列数 (列, 行)
+@export var grid_size := Vector2i(10, 10)  # 网格行列数 (列, 行)
 @export var cell_size := Vector2(16, 16)     # 每个单元格的像素尺寸（最小3x3）
 @export var default_texture: Texture2D       # 默认贴图（可选）
 @export var scale_mode: ScaleMode = ScaleMode.FIT  # 纹理缩放模式

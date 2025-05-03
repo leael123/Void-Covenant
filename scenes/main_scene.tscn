@@ -8,7 +8,7 @@
 
 [sub_resource type="Resource" id="Resource_pu3yx"]
 script = ExtResource("2_7ykc4")
-grid_size = Vector2i(100, 100)
+grid_size = Vector2i(10, 10)
 cell_size = Vector2(16, 16)
 scale_mode = 0
 metadata/_custom_type_script = "uid://dwrk5n0nom36u"
