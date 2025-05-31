@@ -17,4 +17,4 @@ Thumbs.db
 # Godot build artifacts
 *.pck
 *.exe 
-*.zip                        
+*.zip
